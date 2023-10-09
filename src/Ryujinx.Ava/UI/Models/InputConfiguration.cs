@@ -107,6 +107,7 @@ namespace Ryujinx.Ava.UI.Models
         public MotionInputBackendType MotionBackend { get; set; }
 
         public TKey ButtonMinus { get; set; }
+        public TKey ButtonCapture { get; set; }
         public TKey ButtonL { get; set; }
         public TKey ButtonZl { get; set; }
         public TKey LeftButtonSl { get; set; }
@@ -117,6 +118,7 @@ namespace Ryujinx.Ava.UI.Models
         public TKey DpadRight { get; set; }
 
         public TKey ButtonPlus { get; set; }
+        public TKey ButtonHome { get; set; }
         public TKey ButtonR { get; set; }
         public TKey ButtonZr { get; set; }
         public TKey RightButtonSl { get; set; }
@@ -229,12 +231,14 @@ namespace Ryujinx.Ava.UI.Models
                     RightButtonSr = (TKey)(object)keyboardConfig.RightJoycon.ButtonSr;
                     ButtonZr = (TKey)(object)keyboardConfig.RightJoycon.ButtonZr;
                     ButtonPlus = (TKey)(object)keyboardConfig.RightJoycon.ButtonPlus;
+                    ButtonHome = (TKey)(object)keyboardConfig.RightJoycon.ButtonHome;
 
                     DpadUp = (TKey)(object)keyboardConfig.LeftJoycon.DpadUp;
                     DpadDown = (TKey)(object)keyboardConfig.LeftJoycon.DpadDown;
                     DpadLeft = (TKey)(object)keyboardConfig.LeftJoycon.DpadLeft;
                     DpadRight = (TKey)(object)keyboardConfig.LeftJoycon.DpadRight;
                     ButtonMinus = (TKey)(object)keyboardConfig.LeftJoycon.ButtonMinus;
+                    ButtonCapture = (TKey)(object)keyboardConfig.LeftJoycon.ButtonCapture;
                     LeftButtonSl = (TKey)(object)keyboardConfig.LeftJoycon.ButtonSl;
                     LeftButtonSr = (TKey)(object)keyboardConfig.LeftJoycon.ButtonSr;
                     ButtonZl = (TKey)(object)keyboardConfig.LeftJoycon.ButtonZl;
@@ -263,12 +267,14 @@ namespace Ryujinx.Ava.UI.Models
                     RightButtonSr = (TKey)(object)controllerConfig.RightJoycon.ButtonSr;
                     ButtonZr = (TKey)(object)controllerConfig.RightJoycon.ButtonZr;
                     ButtonPlus = (TKey)(object)controllerConfig.RightJoycon.ButtonPlus;
+                    ButtonHome = (TKey)(object)controllerConfig.RightJoycon.ButtonHome;
 
                     DpadUp = (TKey)(object)controllerConfig.LeftJoycon.DpadUp;
                     DpadDown = (TKey)(object)controllerConfig.LeftJoycon.DpadDown;
                     DpadLeft = (TKey)(object)controllerConfig.LeftJoycon.DpadLeft;
                     DpadRight = (TKey)(object)controllerConfig.LeftJoycon.DpadRight;
                     ButtonMinus = (TKey)(object)controllerConfig.LeftJoycon.ButtonMinus;
+                    ButtonCapture = (TKey)(object)controllerConfig.LeftJoycon.ButtonCapture;
                     LeftButtonSl = (TKey)(object)controllerConfig.LeftJoycon.ButtonSl;
                     LeftButtonSr = (TKey)(object)controllerConfig.LeftJoycon.ButtonSr;
                     ButtonZl = (TKey)(object)controllerConfig.LeftJoycon.ButtonZl;
@@ -333,6 +339,7 @@ namespace Ryujinx.Ava.UI.Models
                         ButtonSl = (Key)(object)LeftButtonSl,
                         ButtonSr = (Key)(object)LeftButtonSr,
                         ButtonMinus = (Key)(object)ButtonMinus,
+                        ButtonCapture = (Key)(object)ButtonCapture,
                     },
                     RightJoycon = new RightJoyconCommonConfig<Key>
                     {
@@ -341,6 +348,7 @@ namespace Ryujinx.Ava.UI.Models
                         ButtonX = (Key)(object)ButtonX,
                         ButtonY = (Key)(object)ButtonY,
                         ButtonPlus = (Key)(object)ButtonPlus,
+                        ButtonHome = (Key)(object)ButtonHome,
                         ButtonSl = (Key)(object)RightButtonSl,
                         ButtonSr = (Key)(object)RightButtonSr,
                         ButtonR = (Key)(object)ButtonR,
@@ -386,6 +394,7 @@ namespace Ryujinx.Ava.UI.Models
                         ButtonSl = (GamepadInputId)(object)LeftButtonSl,
                         ButtonSr = (GamepadInputId)(object)LeftButtonSr,
                         ButtonMinus = (GamepadInputId)(object)ButtonMinus,
+                        ButtonCapture = (GamepadInputId)(object)ButtonCapture,
                     },
                     RightJoycon = new RightJoyconCommonConfig<GamepadInputId>
                     {
@@ -394,6 +403,7 @@ namespace Ryujinx.Ava.UI.Models
                         ButtonX = (GamepadInputId)(object)ButtonX,
                         ButtonY = (GamepadInputId)(object)ButtonY,
                         ButtonPlus = (GamepadInputId)(object)ButtonPlus,
+                        ButtonHome = (GamepadInputId)(object)ButtonHome,
                         ButtonSl = (GamepadInputId)(object)RightButtonSl,
                         ButtonSr = (GamepadInputId)(object)RightButtonSr,
                         ButtonR = (GamepadInputId)(object)ButtonR,
