@@ -3,6 +3,7 @@
     public class RightJoyconCommonConfig<TButton>
     {
         public TButton ButtonPlus { get; set; }
+        public TButton ButtonHome { get; set; }
         public TButton ButtonR { get; set; }
         public TButton ButtonZr { get; set; }
         public TButton ButtonSl { get; set; }

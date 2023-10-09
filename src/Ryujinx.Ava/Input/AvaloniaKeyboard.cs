@@ -128,6 +128,7 @@ namespace Ryujinx.Ava.Input
                 _buttonsUserMapping.Add(new ButtonMappingEntry(GamepadButtonInputId.DpadLeft,            (Key)_configuration.LeftJoycon.DpadLeft));
                 _buttonsUserMapping.Add(new ButtonMappingEntry(GamepadButtonInputId.DpadRight,           (Key)_configuration.LeftJoycon.DpadRight));
                 _buttonsUserMapping.Add(new ButtonMappingEntry(GamepadButtonInputId.Minus,               (Key)_configuration.LeftJoycon.ButtonMinus));
+                _buttonsUserMapping.Add(new ButtonMappingEntry(GamepadButtonInputId.Misc1,               (Key)_configuration.LeftJoycon.ButtonCapture));
                 _buttonsUserMapping.Add(new ButtonMappingEntry(GamepadButtonInputId.LeftShoulder,        (Key)_configuration.LeftJoycon.ButtonL));
                 _buttonsUserMapping.Add(new ButtonMappingEntry(GamepadButtonInputId.LeftTrigger,         (Key)_configuration.LeftJoycon.ButtonZl));
                 _buttonsUserMapping.Add(new ButtonMappingEntry(GamepadButtonInputId.SingleRightTrigger0, (Key)_configuration.LeftJoycon.ButtonSr));
@@ -140,6 +141,7 @@ namespace Ryujinx.Ava.Input
                 _buttonsUserMapping.Add(new ButtonMappingEntry(GamepadButtonInputId.X,                   (Key)_configuration.RightJoycon.ButtonX));
                 _buttonsUserMapping.Add(new ButtonMappingEntry(GamepadButtonInputId.Y,                   (Key)_configuration.RightJoycon.ButtonY));
                 _buttonsUserMapping.Add(new ButtonMappingEntry(GamepadButtonInputId.Plus,                (Key)_configuration.RightJoycon.ButtonPlus));
+                _buttonsUserMapping.Add(new ButtonMappingEntry(GamepadButtonInputId.Guide,               (Key)_configuration.RightJoycon.ButtonHome));
                 _buttonsUserMapping.Add(new ButtonMappingEntry(GamepadButtonInputId.RightShoulder,       (Key)_configuration.RightJoycon.ButtonR));
                 _buttonsUserMapping.Add(new ButtonMappingEntry(GamepadButtonInputId.RightTrigger,        (Key)_configuration.RightJoycon.ButtonZr));
                 _buttonsUserMapping.Add(new ButtonMappingEntry(GamepadButtonInputId.SingleRightTrigger1, (Key)_configuration.RightJoycon.ButtonSr));

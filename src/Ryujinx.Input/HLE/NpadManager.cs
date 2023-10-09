@@ -1,3 +1,4 @@
+using Ryujinx.Common;
 using Ryujinx.Common.Configuration.Hid;
 using Ryujinx.Common.Configuration.Hid.Controller;
 using Ryujinx.Common.Configuration.Hid.Keyboard;
@@ -35,6 +36,8 @@ namespace Ryujinx.Input.HLE
         private bool _enableMouse;
         private Switch _device;
 
+        public readonly ReactiveObject<MiscInputId?> MiscInput;
+
         public NpadManager(IGamepadDriver keyboardDriver, IGamepadDriver gamepadDriver, IGamepadDriver mouseDriver)
         {
             _controllers = new NpadController[MaxControllers];
@@ -44,6 +47,8 @@ namespace Ryujinx.Input.HLE
             _gamepadDriver = gamepadDriver;
             _mouseDriver = mouseDriver;
             _inputConfig = new List<InputConfig>();
+
+            MiscInput = new ReactiveObject<MiscInputId?>();
 
             _gamepadDriver.OnGamepadConnected += HandleOnGamepadConnected;
             _gamepadDriver.OnGamepadDisconnected += HandleOnGamepadDisconnected;
@@ -194,6 +199,13 @@ namespace Ryujinx.Input.HLE
                         inputState = controller.GetHLEInputState();
 
                         inputState.Buttons |= _device.Hid.UpdateStickButtons(inputState.LStick, inputState.RStick);
+
+                        MiscInput.Value = inputState.Buttons switch
+                        {
+                            ControllerKeys.Home => MiscInputId.Home,
+                            ControllerKeys.Capture => MiscInputId.Capture,
+                            _ => null
+                        };
 
                         isJoyconPair = inputConfig.ControllerType == ControllerType.JoyconPair;
 
