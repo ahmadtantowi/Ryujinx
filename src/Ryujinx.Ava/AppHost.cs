@@ -1,4 +1,4 @@
-using ARMeilleure.Translation;
+﻿using ARMeilleure.Translation;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
@@ -203,6 +203,17 @@ namespace Ryujinx.Ava
             if (e.NewValue == MiscInputId.Capture)
             {
                 _renderer.Screenshot();
+            }
+            else if (e.NewValue == MiscInputId.Home)
+            {
+                if (_viewModel.IsPaused)
+                {
+                    Resume();
+                }
+                else
+                {
+                    Pause();
+                }
             }
         }
 
