@@ -1,4 +1,4 @@
-﻿using ARMeilleure.Translation;
+using ARMeilleure.Translation;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
@@ -150,6 +150,7 @@ namespace Ryujinx.Ava
             _keyboardInterface = (IKeyboard)_inputManager.KeyboardDriver.GetGamepad("0");
 
             NpadManager = _inputManager.CreateNpadManager();
+            NpadManager.MiscInput.Event += MiscInputPressed;
             TouchScreenManager = _inputManager.CreateTouchScreenManager();
             ApplicationPath = applicationPath;
             VirtualFileSystem = virtualFileSystem;
@@ -195,6 +196,14 @@ namespace Ryujinx.Ava
 
             _gpuCancellationTokenSource = new CancellationTokenSource();
             _gpuDoneEvent = new ManualResetEvent(false);
+        }
+
+        private void MiscInputPressed(object _, ReactiveEventArgs<MiscInputId?> e)
+        {
+            if (e.NewValue == MiscInputId.Capture)
+            {
+                _renderer.Screenshot();
+            }
         }
 
         private void TopLevel_PointerEnteredOrMoved(object sender, PointerEventArgs e)
@@ -464,6 +473,8 @@ namespace Ryujinx.Ava
             {
                 MainWindowViewModel.UpdateGameMetadata(Device.Processes.ActiveApplication.ProgramIdText);
             }
+
+            NpadManager.MiscInput.Event -= MiscInputPressed;
 
             ConfigurationState.Instance.System.IgnoreMissingServices.Event -= UpdateIgnoreMissingServicesState;
             ConfigurationState.Instance.Graphics.AspectRatio.Event -= UpdateAspectRatioState;
